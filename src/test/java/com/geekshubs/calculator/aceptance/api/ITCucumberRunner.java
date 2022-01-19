@@ -13,5 +13,5 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 @SelectClasspathResource("com/geekshubs/calculator/acceptance/api/ping.feature")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.geekshubs.calculator.aceptance.api")
-public class ITRunCucumberTest {
+public class ITCucumberRunner {
 }

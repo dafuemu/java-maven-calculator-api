@@ -214,7 +214,7 @@
                     <!-- Excludes integration tests when unit tests are run. -->
                     <excludes>
                         <exclude>**/IT*.java</exclude>
-                        <exclude>**/ITRunCucumberTest.java</exclude>
+                        <exclude>**/ITCucumberRunner.java</exclude>
                     </excludes>
                     <properties>
                         <!-- Work around. Surefire does not include enough
