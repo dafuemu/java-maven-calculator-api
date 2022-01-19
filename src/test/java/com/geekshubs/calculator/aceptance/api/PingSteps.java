@@ -15,11 +15,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PingSteps {
 
     HttpResponse response;
+    String host = "localhost";
+    int port = 8080;
 
     @When("^I make a GET call on ([^\"]*)$")
     public void iMakeAGETCallOn(String path) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet(String.format("http://localhost:8080%s",path));
+        HttpGet httpGet = new HttpGet(String.format("http://%s:%d%s", host, port, path));
         response = httpclient.execute(httpGet);
     }
 
