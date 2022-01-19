@@ -25,15 +25,19 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
       - name: Compile
-        run: mvn compile
-      - name: Test
-        run: mvn verify
+        run: mvn clean compile
+      - name: Unit Test
+        run: mvn test
+      - name: Integration API Test
+        run: mvn verify -P integration-test
       - name: Upload test results
         uses: actions/upload-artifact@v2  # upload test results
         if: success() || failure()        # run this step even if previous step failed
         with:
           name: test-results
-          path: target/surefire-reports/TEST*.xml
+          path: |
+            target/surefire-reports/TEST*.xml
+            target/failsafe-reports/TEST*.xml
       - name: Analyze with SonarCloud
         run: mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=sonarqubegeekshubs
         env:

@@ -1,4 +1,4 @@
-package com.geekshubs.calculator.rest;
+package com.geekshubs.calculator.integration;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -11,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalculatorAPITestIT {
+public class ITCalculatorAPITest {
 
     @Test
     public void testPing() throws Exception {
